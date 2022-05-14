@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config({path:'.env'})
 
 
 // creating Data base 
 
-mongoose.connect("mongodb://localhost:27017/dynamicweb")
+mongoose.connect(`${process.env.MONGO_KEY}`)
 .then(() => {
     console.log("Database Connected");
 })
